@@ -1,0 +1,374 @@
+<html>
+  <head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/jquery.mobile-1.0.min.js"></script>
+
+<style>
+ <style type="text/css">
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #337AB7;
+  margin: 0;
+}
+
+
+content {
+  margin-top: 100px;
+}
+
+table {
+  table-layout: Auto;
+  border: 1px solid grey;
+  text-align: left;
+number-align: center;
+}
+
+th {
+  border: 1px solid grey;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  position: sticky;
+  height: auto;
+  width: 130px;
+  background-color: powderblue;
+}
+
+td {
+  border: 1px solid grey;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  text-align: Center;
+number-align; Center;
+}
+
+tr {
+  border: 1px solid blue;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+}
+</style>
+    <title>Incentive Calculator</title>
+  </head>
+
+  <body>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/jquery.mobile-1.0.min.js"></script>
+
+<div data-role='page' id='Home'>
+
+<div data-role='header' data-theme="b" style="display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background-color: #333; color: #fff;">
+  <h1 style="margin: 0; text-align: center;">HSO Incentive</h1>
+  <input type="submit" value="Calculate your Incentive" data-icon="check" data-theme="b" class="button" style="float: left;">
+</div><!-- /header -->
+  <div id="result" style="text-align: center;"></div>
+<div data-role='content'>
+	<label for="tenure"><h3>Select your tenure:</h3></label>
+<select id="tenure">
+<option value="0-30 Days">0-30 Days</option>
+<option value="31-60 Days">31-60 Days</option>
+<option value="61-90 Days">61-90 Days</option>
+<option value=">90 Days">>90 Days</option>
+</select>
+        <table>
+      <tr>
+        <th>Plan Value</th>
+        <th>Plan Type</th>
+        <th>Quantity</th>
+      </tr>
+      <tr>
+        <td rowspan = "5"><h2><b>399</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-1" id="quantity-1"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-2" id="quantity-2"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-3" id="quantity-3"></td>
+      </tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-4" id="quantity-4"></td>
+      </tr>
+      <tr>
+        <td>Prepaid</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-5" id="quantity-5"></td>
+      </tr>
+      <tr>
+        <td rowspan = "4"><h2><b>499</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-6" id="quantity-6"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-7" id="quantity-7"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-8" id="quantity-8"></td>
+      </tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-9" id="quantity-9"></td>
+      </tr>
+      <tr>
+        <td rowspan = "4"><h2><b>599</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-10" id="quantity-10"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-11" id="quantity-11"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-12" id="quantity-12"></td>
+	</tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-13" id="quantity-13"></td>
+	</tr>
+
+     <tr>
+        <td rowspan = "5"><h2><b>699</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-14" id="quantity-14"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-15" id="quantity-15"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-16" id="quantity-16"></td>
+      </tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-17" id="quantity-17"></td>
+      </tr>
+      <tr>
+        <td>Prepaid</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-18" id="quantity-18"></td>
+      </tr>
+      <tr>
+        <td rowspan = "4"><h2><b>799</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-19" id="quantity-19"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-20" id="quantity-20"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-21" id="quantity-21"></td>
+      </tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-22" id="quantity-22"></td>
+      </tr>
+      <tr>
+        <td rowspan = "4"><h2><b>899</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-23" id="quantity-23"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-24" id="quantity-24"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-25" id="quantity-25"></td>
+	</tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-26" id="quantity-26"></td>
+	</tr>
+
+	<tr>
+        <td rowspan = "5"><h2><b>999</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-27" id="quantity-27"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-28" id="quantity-28"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-29" id="quantity-29"></td>
+      </tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-30" id="quantity-30"></td>
+      </tr>
+      <tr>
+        <td>Prepaid</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-31" id="quantity-31"></td>
+      </tr>
+	<tr>
+        <td rowspan = "5"><h2><b>≥1499</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-32" id="quantity-32"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-33" id="quantity-33"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-34" id="quantity-34"></td>
+      </tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-35" id="quantity-35"></td>
+      </tr>
+      <tr>
+        <td>Prepaid</td>
+        <td><input type="number"  min="0" max="999"  step="1" name="quantity-36" id="quantity-36"></td>
+      </tr>
+
+    </table>
+</div><!-- /content -->
+</div><!-- /page -->
+
+  </body>
+
+	  
+<script>
+  const submitBtn = document.querySelector("input[type='submit']");
+  submitBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    let totalIncentive = 0;
+totalIncentive += document.querySelector("#quantity-1").value*0;
+totalIncentive += document.querySelector("#quantity-2").value*100;
+totalIncentive += document.querySelector("#quantity-3").value*150;
+totalIncentive += document.querySelector("#quantity-4").value*75;
+totalIncentive += document.querySelector("#quantity-5").value*75;
+totalIncentive += document.querySelector("#quantity-6").value*0;
+totalIncentive += document.querySelector("#quantity-7").value*175;
+totalIncentive += document.querySelector("#quantity-8").value*300;
+totalIncentive += document.querySelector("#quantity-9").value*75;
+totalIncentive += document.querySelector("#quantity-10").value*0;
+totalIncentive += document.querySelector("#quantity-11").value*225;
+totalIncentive += document.querySelector("#quantity-12").value*400;
+totalIncentive += document.querySelector("#quantity-13").value*75;
+totalIncentive += document.querySelector("#quantity-14").value*150;
+totalIncentive += document.querySelector("#quantity-15").value*250;
+totalIncentive += document.querySelector("#quantity-16").value*450;
+totalIncentive += document.querySelector("#quantity-17").value*100;
+totalIncentive += document.querySelector("#quantity-18").value*100;
+totalIncentive += document.querySelector("#quantity-19").value*175;
+totalIncentive += document.querySelector("#quantity-20").value*300;
+totalIncentive += document.querySelector("#quantity-21").value*550;
+totalIncentive += document.querySelector("#quantity-22").value*100;
+totalIncentive += document.querySelector("#quantity-23").value*200;
+totalIncentive += document.querySelector("#quantity-24").value*350;
+totalIncentive += document.querySelector("#quantity-25").value*650;
+totalIncentive += document.querySelector("#quantity-26").value*100;
+totalIncentive += document.querySelector("#quantity-27").value*250;
+totalIncentive += document.querySelector("#quantity-28").value*400;
+totalIncentive += document.querySelector("#quantity-29").value*750;
+totalIncentive += document.querySelector("#quantity-30").value*150;
+totalIncentive += document.querySelector("#quantity-31").value*150;
+totalIncentive += document.querySelector("#quantity-32").value*400;
+totalIncentive += document.querySelector("#quantity-33").value*700;
+totalIncentive += document.querySelector("#quantity-34").value*1200;
+totalIncentive += document.querySelector("#quantity-35").value*200;
+totalIncentive += document.querySelector("#quantity-36").value*200;
+
+let totalact = 0;
+totalact += document.querySelector("#quantity-1").value*1;
+totalact += document.querySelector("#quantity-2").value*1;
+totalact += document.querySelector("#quantity-3").value*1;
+totalact += document.querySelector("#quantity-4").value*1;
+totalact += document.querySelector("#quantity-5").value*1;
+totalact += document.querySelector("#quantity-6").value*1;
+totalact += document.querySelector("#quantity-7").value*1;
+totalact += document.querySelector("#quantity-8").value*1;
+totalact += document.querySelector("#quantity-9").value*1;
+totalact += document.querySelector("#quantity-10").value*1;
+totalact += document.querySelector("#quantity-11").value*1;
+totalact += document.querySelector("#quantity-12").value*1;
+totalact += document.querySelector("#quantity-13").value*1;
+totalact += document.querySelector("#quantity-14").value*1;
+totalact += document.querySelector("#quantity-15").value*1;
+totalact += document.querySelector("#quantity-16").value*1;
+totalact += document.querySelector("#quantity-17").value*1;
+totalact += document.querySelector("#quantity-18").value*1;
+totalact += document.querySelector("#quantity-19").value*1;
+totalact += document.querySelector("#quantity-20").value*1;
+totalact += document.querySelector("#quantity-21").value*1;
+totalact += document.querySelector("#quantity-22").value*1;
+totalact += document.querySelector("#quantity-23").value*1;
+totalact += document.querySelector("#quantity-24").value*1;
+totalact += document.querySelector("#quantity-25").value*1;
+totalact += document.querySelector("#quantity-26").value*1;
+totalact += document.querySelector("#quantity-27").value*1;
+totalact += document.querySelector("#quantity-28").value*1;
+totalact += document.querySelector("#quantity-29").value*1;
+totalact += document.querySelector("#quantity-30").value*1;
+totalact += document.querySelector("#quantity-31").value*1;
+totalact += document.querySelector("#quantity-32").value*1;
+totalact += document.querySelector("#quantity-33").value*1;
+totalact += document.querySelector("#quantity-34").value*1;
+totalact += document.querySelector("#quantity-35").value*1;
+totalact += document.querySelector("#quantity-36").value*1;
+
+
+    let tenure = document.querySelector("#tenure").value;
+    let slab = 0;
+    if (totalact < 50) {
+      slab = 0;
+    } else if (totalact < 75) {
+      slab = 50;
+    } else if (totalact < 100) {
+      slab = 75;
+    } else {
+      slab = 100;
+    }
+
+    if (tenure == "0-30 Days" && totalact < 10) {
+      const result = document.querySelector("#result");
+      result.innerHTML = "minimum 10 activations is required for Incentive";
+    } else if (tenure == "31-60 Days" && totalact < 15) {
+      const result = document.querySelector("#result");
+      result.innerHTML = "minimum 15 activations is required for Incentive";
+    } else if (tenure == "61-90 Days" && totalact < 25) {
+      const result = document.querySelector("#result");
+      result.innerHTML = "minimum 25 activations is required for Incentive";
+    } else if (tenure == ">90 Days" && totalact < 35) {
+      const result = document.querySelector("#result");
+      result.innerHTML = "minimum 35 activations is required for Incentive";
+    } else {
+      if (tenure == "0-30 Days") {
+        totalIncentive = totalIncentive + (totalact*slab);
+      } else if (tenure == "31-60 Days") {
+        totalIncentive = totalIncentive + (totalact*slab);
+      } else if (tenure == "61-90 Days") {
+        totalIncentive = totalIncentive + (totalact*slab);
+      } else if (tenure == ">90 Days") {
+        totalIncentive = totalIncentive + (totalact*slab);
+      }
+      const result = document.querySelector("#result");
+      result.innerHTML = "Your total incentive is = " + totalIncentive;
+    }
+  });
+</script>
+
+</html>
