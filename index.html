@@ -1,33 +1,19 @@
 <html>
   <head>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js/jquery.mobile-1.0.min.js"></script>
 
 <style>
 
-
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #337AB7;
-  margin: 0;
-}
-
- <style type="text/css">
-content {
-  margin-top: 100px;
-}
-
 table {
-  table-layout: Auto;
+  table-layout: auto;
+  width:100%;
   border: 1px solid grey;
-  text-align: left;
-number-align: center;
+  text-align:center;
 }
 
 th {
@@ -35,57 +21,47 @@ th {
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;
-  position: sticky;
-  height: auto;
-  width: 130px;
-  background-color: powderblue;
+  background-color: rgba(58, 214, 235, 0.281);
 }
 
 td {
-  border: 1px solid grey;
+  border: 1px solid gray;
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;
-  text-align: Center;
-number-align; Center;
+  text-align: center;
 }
 
-tr {
-  border: 1px solid blue;
-  overflow: hidden;
-  white-space: normal;
-  text-overflow: ellipsis;
+#home {
+ background-color: rgba(58, 214, 235, 0.281);
+ width: 100%;
 }
+
 </style>
     <title>Incentive Calculator</title>
   </head>
 
-  <body>
+<body>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js/jquery.mobile-1.0.min.js"></script>
 
-<div data-role='page' id='Home'>
-
-<div data-role='header' data-theme="b" style="display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background-color: #333; color: #fff;">
-  <h1 style="margin: 0; text-align: center;">HSO Incentive</h1>
-  <input type="submit" value="Calculate your Incentive" data-icon="check" data-theme="b" class="button" style="float: left;">
+<div data-role='header' id='home'> <h1>HSO Incentive</h1>
 </div><!-- /header -->
-	<div id="result" style="text-align: center;"><h2>Incentive</h2></div>
 <div data-role='content'>
+  <input type="button" value="Calculate Incentive" >
 	<label for="tenure"><h3>Select your tenure:</h3></label>
-<select id="tenure">
-<option value="0-30 Days">0-30 Days</option>
+<select id="tenure" value="Select Tenure">
+<option value="0-30 Days" text-align="center">0-30 Days</option>
 <option value="31-60 Days">31-60 Days</option>
 <option value="61-90 Days">61-90 Days</option>
 <option value=">90 Days">>90 Days</option>
 </select>
         <table>
       <tr>
-        <th>Plan Value</th>
-        <th>Plan Type</th>
-        <th>Quantity</th>
+        <th style="width:100px">Plan Value</th>
+        <th style="width:150px">Plan Type</th>
+        <th style="width:100px">Quantity</th>
       </tr>
       <tr>
         <td rowspan = "5"><h2><b>399</b></h2></td>
@@ -244,13 +220,10 @@ tr {
 
     </table>
 </div><!-- /content -->
-</div><!-- /page -->
+</body>
 
-  </body>
-
-	  
-<script>
-  const submitBtn = document.querySelector("input[type='submit']");
+  <script>
+ const submitBtn = document.querySelector("input[type='button']");
   submitBtn.addEventListener("click", function(event) {
     event.preventDefault();
     let totalIncentive = 0;
@@ -343,17 +316,13 @@ totalact += document.querySelector("#quantity-36").value*1;
     }
 
     if (tenure == "0-30 Days" && totalact < 10) {
-      const result = document.querySelector("#result");
-      result.innerHTML = "minimum 10 activations is required for Incentive";
+      alert("minimum 10 activations are required for Incentive");
     } else if (tenure == "31-60 Days" && totalact < 15) {
-      const result = document.querySelector("#result");
-      result.innerHTML = "minimum 15 activations is required for Incentive";
+      alert("minimum 15 activations are required for Incentive");
     } else if (tenure == "61-90 Days" && totalact < 25) {
-      const result = document.querySelector("#result");
-      result.innerHTML = "minimum 25 activations is required for Incentive";
+      alert("minimum 25 activations are required for Incentive");
     } else if (tenure == ">90 Days" && totalact < 35) {
-      const result = document.querySelector("#result");
-      result.innerHTML = "minimum 35 activations is required for Incentive";
+      alert("minimum 35 activations are required for Incentive");
     } else {
       if (tenure == "0-30 Days") {
         totalIncentive = totalIncentive + (totalact*slab);
@@ -364,8 +333,36 @@ totalact += document.querySelector("#quantity-36").value*1;
       } else if (tenure == ">90 Days") {
         totalIncentive = totalIncentive + (totalact*slab);
       }
-      const result = document.querySelector("#result");
-      result.innerHTML = "Your estimated incentive is Rs. = " + totalIncentive + " <br></br> and Total actionvation count is: " + totalact ;
+
+      let today = new Date();
+      let totalDaysInCurrentMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+      let daysElapsedInCurrentMonth = today.getDate();
+      let forecastedIncentive = Math.round((totalIncentive / daysElapsedInCurrentMonth) * totalDaysInCurrentMonth);
+      let forecastedORN = Math.round((totalact / daysElapsedInCurrentMonth) * totalDaysInCurrentMonth);
+
+      let popup = document.createElement("div");
+      popup.style.backgroundColor = "white";
+      popup.style.color = "black";
+      popup.style.boxShadow = "1px 2px 3px 4px rgba(20,20,20,0.4)";
+      popup.style.font = "Calibri";
+      popup.style.padding = "10px";
+      popup.style.position = "fixed";
+      popup.style.left = "50%";
+      popup.style.top = "10%";
+      popup.style.transform = "translate(-50%, -50%)";
+
+      let closeBtn = document.createElement("button");
+      closeBtn.innerHTML = "Close";
+      closeBtn.style.marginInlineStart = "20px";
+      closeBtn.style.backgroundColor = "red";
+      closeBtn.style.color = "white";
+      closeBtn.style.top = "20%";
+      closeBtn.addEventListener("click", function() {
+      popup.style.display = "none";
+});
+    popup.appendChild(document.createTextNode( "Your predictive incentive so far is Rs. " + totalIncentive + " and total Activations are " + totalact +  " Activations." + " You have opportunity to earn Rs. " + forecastedIncentive + " by doing total " + (forecastedORN - totalact) +" extra activations this month."));
+    popup.appendChild(closeBtn);
+    document.body.appendChild(popup);
     }
   });
 </script>
