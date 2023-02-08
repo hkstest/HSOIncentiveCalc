@@ -64,11 +64,7 @@ td {
         <th style="width:100px">Quantity</th>
       </tr>
       <tr>
-        <td rowspan = "5"><h2><b>399</b></h2></td>
-        <td>3 Months</td>
-        <td><input type="number"  min="0" max="999"  step="1" name="quantity-1" id="quantity-1"></td>
-      </tr>
-      <tr>
+        <td rowspan = "4"><h2><b>399</b></h2></td>
         <td>6 Months</td>
         <td><input type="number"  min="0" max="999"  step="1" name="quantity-2" id="quantity-2"></td>
       </tr>
@@ -85,11 +81,7 @@ td {
         <td><input type="number"  min="0" max="999"  step="1" name="quantity-5" id="quantity-5"></td>
       </tr>
       <tr>
-        <td rowspan = "4"><h2><b>499</b></h2></td>
-        <td>3 Months</td>
-        <td><input type="number"  min="0" max="999"  step="1" name="quantity-6" id="quantity-6"></td>
-      </tr>
-      <tr>
+        <td rowspan = "3"><h2><b>499</b></h2></td>
         <td>6 Months</td>
         <td><input type="number"  min="0" max="999"  step="1" name="quantity-7" id="quantity-7"></td>
       </tr>
@@ -102,11 +94,7 @@ td {
         <td><input type="number"  min="0" max="999"  step="1" name="quantity-9" id="quantity-9"></td>
       </tr>
       <tr>
-        <td rowspan = "4"><h2><b>599</b></h2></td>
-        <td>3 Months</td>
-        <td><input type="number"  min="0" max="999"  step="1" name="quantity-10" id="quantity-10"></td>
-      </tr>
-      <tr>
+        <td rowspan = "3"><h2><b>599</b></h2></td>
         <td>6 Months</td>
         <td><input type="number"  min="0" max="999"  step="1" name="quantity-11" id="quantity-11"></td>
       </tr>
@@ -227,18 +215,15 @@ td {
   submitBtn.addEventListener("click", function(event) {
     event.preventDefault();
     let totalIncentive = 0;
-totalIncentive += document.querySelector("#quantity-1").value*0;
 totalIncentive += document.querySelector("#quantity-2").value*100;
 totalIncentive += document.querySelector("#quantity-3").value*150;
 totalIncentive += document.querySelector("#quantity-4").value*75;
 totalIncentive += document.querySelector("#quantity-5").value*75;
-totalIncentive += document.querySelector("#quantity-6").value*0;
 totalIncentive += document.querySelector("#quantity-7").value*175;
 totalIncentive += document.querySelector("#quantity-8").value*300;
 totalIncentive += document.querySelector("#quantity-9").value*75;
-totalIncentive += document.querySelector("#quantity-10").value*0;
-totalIncentive += document.querySelector("#quantity-11").value*225;
-totalIncentive += document.querySelector("#quantity-12").value*400;
+totalIncentive += document.querySelector("#quantity-11").value*250;
+totalIncentive += document.querySelector("#quantity-12").value*425;
 totalIncentive += document.querySelector("#quantity-13").value*75;
 totalIncentive += document.querySelector("#quantity-14").value*150;
 totalIncentive += document.querySelector("#quantity-15").value*250;
@@ -249,9 +234,9 @@ totalIncentive += document.querySelector("#quantity-19").value*175;
 totalIncentive += document.querySelector("#quantity-20").value*300;
 totalIncentive += document.querySelector("#quantity-21").value*550;
 totalIncentive += document.querySelector("#quantity-22").value*100;
-totalIncentive += document.querySelector("#quantity-23").value*200;
-totalIncentive += document.querySelector("#quantity-24").value*350;
-totalIncentive += document.querySelector("#quantity-25").value*650;
+totalIncentive += document.querySelector("#quantity-23").value*225;
+totalIncentive += document.querySelector("#quantity-24").value*375;
+totalIncentive += document.querySelector("#quantity-25").value*675;
 totalIncentive += document.querySelector("#quantity-26").value*100;
 totalIncentive += document.querySelector("#quantity-27").value*250;
 totalIncentive += document.querySelector("#quantity-28").value*400;
@@ -265,16 +250,13 @@ totalIncentive += document.querySelector("#quantity-35").value*200;
 totalIncentive += document.querySelector("#quantity-36").value*200;
 
 let totalact = 0;
-totalact += document.querySelector("#quantity-1").value*1;
 totalact += document.querySelector("#quantity-2").value*1;
 totalact += document.querySelector("#quantity-3").value*1;
 totalact += document.querySelector("#quantity-4").value*1;
 totalact += document.querySelector("#quantity-5").value*1;
-totalact += document.querySelector("#quantity-6").value*1;
 totalact += document.querySelector("#quantity-7").value*1;
 totalact += document.querySelector("#quantity-8").value*1;
 totalact += document.querySelector("#quantity-9").value*1;
-totalact += document.querySelector("#quantity-10").value*1;
 totalact += document.querySelector("#quantity-11").value*1;
 totalact += document.querySelector("#quantity-12").value*1;
 totalact += document.querySelector("#quantity-13").value*1;
@@ -302,7 +284,6 @@ totalact += document.querySelector("#quantity-34").value*1;
 totalact += document.querySelector("#quantity-35").value*1;
 totalact += document.querySelector("#quantity-36").value*1;
 
-
     let tenure = document.querySelector("#tenure").value;
     let slab = 0;
     if (totalact < 50) {
@@ -315,56 +296,48 @@ totalact += document.querySelector("#quantity-36").value*1;
       slab = 100;
     }
 
-    if (tenure == "0-30 Days" && totalact < 10) {
-      alert("minimum 10 activations are required for Incentive");
-    } else if (tenure == "31-60 Days" && totalact < 15) {
-      alert("minimum 15 activations are required for Incentive");
-    } else if (tenure == "61-90 Days" && totalact < 25) {
-      alert("minimum 25 activations are required for Incentive");
-    } else if (tenure == ">90 Days" && totalact < 35) {
-      alert("minimum 35 activations are required for Incentive");
-    } else {
-      if (tenure == "0-30 Days") {
-        totalIncentive = totalIncentive + (totalact*slab);
-      } else if (tenure == "31-60 Days") {
-        totalIncentive = totalIncentive + (totalact*slab);
-      } else if (tenure == "61-90 Days") {
-        totalIncentive = totalIncentive + (totalact*slab);
-      } else if (tenure == ">90 Days") {
-        totalIncentive = totalIncentive + (totalact*slab);
-      }
-
       let today = new Date();
       let totalDaysInCurrentMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
       let daysElapsedInCurrentMonth = today.getDate();
       let forecastedIncentive = Math.round((totalIncentive / daysElapsedInCurrentMonth) * totalDaysInCurrentMonth);
       let forecastedORN = Math.round((totalact / daysElapsedInCurrentMonth) * totalDaysInCurrentMonth);
 
-      let popup = document.createElement("div");
-      popup.style.backgroundColor = "white";
-      popup.style.color = "black";
-      popup.style.boxShadow = "1px 2px 3px 4px rgba(20,20,20,0.4)";
-      popup.style.font = "Calibri";
-      popup.style.padding = "10px";
-      popup.style.position = "fixed";
-      popup.style.left = "50%";
-      popup.style.top = "25%";
-      popup.style.transform = "translate(-50%, -50%)";
+if (tenure === "0-30 Days") {
+  if (forecastedORN < 10) {
+    alert("Minimum 10 activations are required to earn any incentive by the month end, Don't worry and Keep working hard to earn incentive.");
+  } else if (forecastedORN > 9 && totalact < 10) {
+    alert("Your predictive incentive so far is Zero and total activations are " + totalact + "." + " But dont worry, with current pace You have opportunity to earn Rs. " + forecastedIncentive + " by doing total " + (forecastedORN - totalact) +" extra activations this month.");
+  } else {
+    alert("Your predictive incentive so far is Rs. " + totalIncentive + " and total Activations are " + totalact +  " Activations." + " You have opportunity to earn Rs. " + forecastedIncentive + " by doing total " + (forecastedORN - totalact) +" extra activations this month.");
+  }
+} else if (tenure === "31-60 Days") {
+  if (forecastedORN < 15) {
+    alert("Minimum 15 activations are required to earn any incentive by the month end, Don't worry and Keep working hard to earn incentive.");
+  } else if (forecastedORN > 14 && totalact < 15) {
+    alert("Your predictive incentive so far is Zero and total activations are " + totalact + "." + " But dont worry, with current pace You have opportunity to earn Rs. " + forecastedIncentive + " by doing total " + (forecastedORN - totalact) +" extra activations this month.");
+  } else {
+    alert("Your predictive incentive so far is Rs. " + totalIncentive + " and total Activations are " + totalact +  " Activations." + " You have opportunity to earn Rs. " + forecastedIncentive + " by doing total " + (forecastedORN - totalact) +" extra activations this month.");
+  }
 
-      let closeBtn = document.createElement("button");
-      closeBtn.innerHTML = "Close";
-      closeBtn.style.marginInlineStart = "20px";
-      closeBtn.style.backgroundColor = "red";
-      closeBtn.style.color = "white";
-      closeBtn.style.top = "20%";
-      closeBtn.addEventListener("click", function() {
-      popup.style.display = "none";
-});
-    popup.appendChild(document.createTextNode( "Your predictive incentive so far is Rs. " + totalIncentive + " and total Activations are " + totalact +  " Activations." + " You have opportunity to earn Rs. " + forecastedIncentive + " by doing total " + (forecastedORN - totalact) +" extra activations this month."));
-    popup.appendChild(closeBtn);
-    document.body.appendChild(popup);
-    }
-  });
+} else if (tenure === "61-90 Days") {
+  if (forecastedORN < 25) {
+    alert("Minimum 25 activations are required to earn any incentive by the month end, Don't worry and Keep working hard to earn incentive.");
+  } else if (forecastedORN > 24 && totalact < 25) {
+    alert("Your predictive incentive so far is Zero and total activations are " + totalact + "." + " But dont worry, with current pace You have opportunity to earn Rs. " + forecastedIncentive + " by doing total " + (forecastedORN - totalact) +" extra activations this month.");
+  } else {
+    alert("Your predictive incentive so far is Rs. " + totalIncentive + " and total Activations are " + totalact +  " Activations." + " You have opportunity to earn Rs. " + forecastedIncentive + " by doing total " + (forecastedORN - totalact) +" extra activations this month.");
+  }
+
+} else if (tenure === ">90 Days") {
+  if (forecastedORN < 35) {
+    alert("Minimum 35 activations are required to earn any incentive by the month end, Don't worry and Keep working hard to earn incentive.");
+  } else if (forecastedORN > 34 && totalact < 35) {
+    alert("Your predictive incentive so far is Zero and total activations are " + totalact + "." + " But dont worry, with current pace You have opportunity to earn Rs. " + forecastedIncentive + " by doing total " + (forecastedORN - totalact) +" extra activations this month.");
+  } else {
+    alert("Your predictive incentive so far is Rs. " + totalIncentive + " and total Activations are " + totalact +  " Activations." + " You have opportunity to earn Rs. " + forecastedIncentive + " by doing total " + (forecastedORN - totalact) +" extra activations this month.");
+  }
+
+  }});
 </script>
 
 </html>
